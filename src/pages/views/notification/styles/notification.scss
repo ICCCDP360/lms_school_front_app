@@ -1,0 +1,16 @@
+@use "../../../../scss/abstract/" as *;
+
+.notification-main-container {
+  width: 100%;
+  padding: 1%;
+  padding-top: 0.5%;
+  .notify-sub-container {
+    background: white;
+    border-radius: 10px;
+  }
+  .notify-content {
+    @include xsBreakPoint {
+      font-size: 10px;
+    }
+  }
+}

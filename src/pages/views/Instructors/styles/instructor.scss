@@ -1,0 +1,416 @@
+@use "../../../../scss/abstract/" as *;
+
+//instructor-main
+.instructor-mainpage-container {
+  padding: 1%;
+  width: 100%;
+  @include smBreakPoint {
+    // padding: 1%;
+    height: 1117px;
+  }
+  @include xsBreakPoint {
+    height: 1117px;
+
+    // padding: 1%;
+  }
+  @include mdBreakPoint {
+    height: 1117px;
+
+    // padding: 1%;
+  }
+  @include lgBreakPoint {
+    height: 1117px;
+
+    // padding: 1%;
+  }
+  @include xxlBreakPoint {
+    height: 1117px;
+    // padding: 1%;
+  }
+  @include xxxlBreakPoint {
+    height: 1117px;
+  }
+}
+//header-instructor
+.main-container-instructor {
+  @include smBreakPoint {
+    width: 95%;
+  }
+  .instructor-header-main-container {
+    margin-left: 1%;
+    .para-teacher-instructor-header {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333333;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .para-total {
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .instructor-header-main-container-1 {
+    display: flex;
+    padding: 1%;
+    padding-bottom: 0px;
+    @include smBreakPoint {
+      display: flex;
+      //   flex-direction: column;
+    }
+    .dropdown-container-main {
+      margin-right: 30px;
+      .dropdown-toggle-instructor {
+        background: transparent;
+        border: transparent;
+      }
+      .dropdown-menu-instructor {
+        width: 310px;
+        margin-left: -250px;
+        cursor: pointer;
+        .instructor-container-div-1 {
+          padding-left: 5%;
+          font-size: 18px;
+          font-weight: 600;
+          padding-right: 5%;
+        }
+        .instructor-container-para {
+          margin-bottom: 0px;
+        }
+        .new-para {
+          margin-bottom: 0px;
+          font-size: 17px;
+        }
+        .hr-instructor-header {
+          margin-top: 5px;
+          border-top: 2px solid gray;
+          margin-bottom: 5px;
+        }
+        .view-instructor-all {
+          font-size: 18px;
+          font-weight: 600;
+          color: #0395c4;
+          padding-left: 5%;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .school-img {
+      cursor: pointer;
+      margin-top: 0.35rem;
+    }
+  }
+}
+
+//
+
+.instructor-content-main-container {
+  background: white;
+  border-radius: 10px;
+  .instructor-content-main-container-1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    @include xsBreakPoint {
+      display: flex;
+      flex-direction: column;
+    }
+    .instructor-content-sub-container-0 {
+      @include xsBreakPoint {
+        // margin-left: -4%;
+      }
+      .instructor-content-sub-container {
+        background: #0395c4;
+        border-radius: 25px;
+        display: flex;
+        width: 121px;
+        height: 40px;
+        border: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .instructor-content-sub-container-1 {
+        display: flex;
+        justify-content: space-around;
+        width: 6rem;
+        align-items: center;
+      }
+      .sub-container-para-1 {
+        font-weight: 600;
+        font-size: 18px;
+        color: white;
+        margin-top: 0.75rem;
+      }
+    }
+    .sub-container-main-0 {
+      display: flex;
+      width: 27.5rem;
+      justify-content: space-between;
+      align-items: center;
+      @include smBreakPoint {
+        margin-top: 2%;
+        display: flex;
+        width: "100%";
+      }
+      @include xsBreakPoint {
+        margin-left: -13%;
+        margin-top: 3%;
+      }
+      .sub-container-main-1 {
+        @include xsBreakPoint {
+          width: 57%;
+          margin-left: 7%;
+        }
+        @include smBreakPoint {
+          margin-left: 30%;
+          margin-top: -3%;
+        }
+        display: flex;
+        align-items: center;
+        background: white;
+        border: 1.5px solid black;
+        border-radius: 25px;
+      }
+      .sub-container-main-input {
+        width: 250px;
+        height: 37px;
+        border: none;
+        border-radius: 25px;
+      }
+      .img-search-instructor {
+        margin-right: 0.5rem;
+      }
+      .sub-img-container {
+        @include xsBreakPoint {
+          margin-left: 1%;
+          display: none;
+        }
+        @include smBreakPoint {
+          display: none;
+        }
+        .container-img-sub-1 {
+          @include xsBreakPoint {
+            width: 25%;
+            // margin-left: 3%;
+          }
+          padding-right: 0.5rem;
+        }
+      }
+    }
+  }
+  .instructor-table-main-container-0 {
+    .instructor-table-container-1 {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5px solid #f5f5f5;
+      height: 3rem;
+      @include xsBreakPoint {
+        width: 95%;
+        margin-left: 2%;
+      }
+      @include smBreakPoint {
+        width: 91%;
+        margin-left: 4%;
+      }
+      .instructor-table-tr {
+        font-weight: 500;
+        font-size: 16px;
+        text-align: center;
+      }
+      .instructor-table-th {
+        border: 1.5px solid #f5f5f5;
+        height: 3rem;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
+        @include smBreakPoint {
+          font-size: x-small;
+        }
+      }
+      .table-map-tr-0 {
+        font-weight: 400;
+        font-size: 16px;
+      }
+      .table-map-tr-1 {
+        border: 1.5px solid #f5f5f5;
+        height: 3rem;
+        text-align: center;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
+      }
+      .table-map-tr-2 {
+        border: 1.5px solid #f5f5f5;
+        height: 3rem;
+        padding-left: 1rem;
+        text-align: center;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
+      }
+      .table-map-tr-3 {
+        @include xsBreakPoint {
+          margin-left: 16%;
+        }
+        width: 2.75rem;
+        background: #f5f5f5;
+        border-radius: 7px;
+        padding-left: 0.5rem;
+        margin-left: 30%;
+      }
+      .table-map-tr-4 {
+        border: 1.5px solid #f5f5f5;
+        height: 3rem;
+        padding-left: 1rem;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
+      }
+      .table-map-tr-5 {
+        @include xsBreakPoint {
+          margin-left: 15%;
+        }
+        width: 3.5rem;
+        background: #f5f5f5;
+        border-radius: 7px;
+        padding-left: 0.5rem;
+        margin-left: 30%;
+      }
+      .table-map-tr-6 {
+        border: 1px solid #f5f5f5;
+        height: 3rem;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+      }
+      .img-edit {
+        width: 2rem;
+      }
+    }
+  }
+  .instructor-pagination-1 {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    padding-right: 1.5rem;
+    .instructor-pagination-2 {
+      display: flex;
+      justify-content: space-around;
+      width: 10rem;
+    }
+    .instructor-pagination-3 {
+      border: 1px solid #b3e0ee;
+      border-radius: 50%;
+      width: 1.5rem;
+
+      text-align: center;
+      background: #b3e0ee;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .instructor-pagination-4 {
+      border: 1px solid #b3e0ee;
+      border-radius: 50%;
+      width: 1.5rem;
+
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+.modal-instructor-container-1 {
+  .modal-instructor-container-2 {
+    .instructor-para {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .para-modal-name {
+      margin-bottom: 0px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .modal-input-jeni {
+      width: 95%;
+      padding: 1.5%;
+      border-radius: 5px;
+      border: 1px solid gray;
+      margin-bottom: 2%;
+      margin-top: 2%;
+    }
+    .input-num {
+      width: 95%;
+      padding: 1.5%;
+      border-radius: 5px;
+      border: 1px solid gray;
+      margin-bottom: 2%;
+      margin-top: 2%;
+    }
+    .select-main-1 {
+      width: 95%;
+      border: 1px solid gray;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      border-radius: 5px;
+      display: flex;
+    }
+    .input-12th {
+      width: 90%;
+      padding: 1.5%;
+
+      border: none;
+    }
+    .drop-instructor-main-1 {
+      background: transparent;
+      border: transparent;
+    }
+    .dropdown-menu-instructor {
+      border: 1.5px solid #a2a2a2;
+    }
+    .item-1 {
+      border-top: 1.5px solid #a2a2a2;
+    }
+    .item-2 {
+      border-top: 1.5px solid #a2a2a2;
+    }
+
+    .assign-para {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .modal-check-form {
+      margin-left: 2%;
+    }
+    .modal-data-1 {
+      display: flex;
+      width: 42%;
+      justify-content: space-between;
+      margin-top: 4%;
+    }
+    .modal-data-2 {
+      width: 88px;
+      height: 40px;
+      font-weight: 600;
+      font-size: 18px;
+      color: #ffffff;
+      background: #0395c4;
+      border-radius: 25px;
+      border: none;
+    }
+    .modal-data-3 {
+      width: 88px;
+      height: 40px;
+      font-weight: 600;
+      font-size: 18px;
+      color: #0395c4;
+      // background: "#0395C4",
+      border-radius: 25px;
+      border: none;
+      border: 1.5px solid #0395c4;
+    }
+  }
+}

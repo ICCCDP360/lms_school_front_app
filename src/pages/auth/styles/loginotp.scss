@@ -1,0 +1,31 @@
+// .signIn-container {
+.otp-para {
+  margin-bottom: 0%;
+}
+.otp-section {
+  background-color: #e6f5f9;
+  display: flex;
+  width: 150px;
+  border-radius: 3px;
+  padding: 0%;
+  .mobile-numberotp {
+    margin-bottom: 0;
+  }
+  .vector-icon {
+    margin-top: 0;
+    margin-left: 6%;
+  }
+}
+.otp-main-input {
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-between;
+  .otp-input {
+    width: 44px;
+    border-radius: 10px;
+    height: 44px;
+    border: 1px solid green;
+    text-align: center;
+  }
+}
+// }

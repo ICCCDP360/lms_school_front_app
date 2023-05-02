@@ -1,0 +1,13 @@
+@use "../../../scss/abstract/" as *;
+
+.single-sidecontent-bottom {
+  cursor: pointer;
+  width: 100%;
+  padding: 1%;
+}
+.single-sidecontent-bottom-active {
+  cursor: pointer;
+  background-color: #0395c4;
+  width: 100%;
+  padding: 1%;
+}

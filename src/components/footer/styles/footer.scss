@@ -1,0 +1,31 @@
+@use "../../../scss/abstract/" as *;
+
+.footer-main {
+  text-align: end;
+  padding: 1%;
+  padding-bottom: 0%;
+  font-size: 13px;
+  font-weight: 600;
+  color: gray;
+  @include xsBreakPoint {
+    // margin-top: 14%;
+  }
+  @include smBreakPoint {
+    // margin-top: 14%;
+  }
+  @include mdBreakPoint {
+    // margin-top: 14%;
+  }
+  @include lgBreakPoint {
+    // margin-top: 6%;
+  }
+  @include xlBreakPoint {
+    // margin-top: 6%;
+  }
+  @include xxlBreakPoint {
+    // margin-top: 1%;
+  }
+  @include xxxlBreakPoint {
+    // margin-top: 1%;
+  }
+}
