@@ -5,24 +5,39 @@ import "../styles/mainpage.scss";
 import Slideshow from "./../../views/components/Slider.js/SliderShow";
 import { SliderData } from "./../../views/components/Slider.js/SliderData";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import signInService from "../../../services/signInService";
 
 function Signin() {
   const navigate = useNavigate();
   const [schoolId, SetSchoolID] = useState("");
   const [schoolPasscode, SetSchoolPasscode] = useState("");
+  const [error, setError] = useState("");
+
   const APISignin = () => {
-    // axios
-    //   .post("https://lms-backend.cdp360.org/api/v1/school/signin", {
-    //     sch_id: schoolId,
-    //     passcode: schoolPasscode,
-    //   })
-    //   .then((response) => {
-    //     localStorage.setItem("accessToken", response.data.token);
-    //     localStorage.setItem("user", JSON.stringify(response.data.SchoolFound));
-    //     navigate("dashboard");
-    //   });
-    navigate("/dashboard");
+    return new Promise((resolve, reject) => {
+      let data = {
+        user_name: schoolId,
+        password: schoolPasscode,
+      };
+      signInService
+        .SignInpage(data)
+        .then((res) => {
+          console.log(res,'manoj');
+          if (res.message == "User Not found") {
+            setError("User Not found");
+          } else {
+            localStorage.setItem("access_tokens", res.access_tokens);
+            localStorage.setItem("_id",res.response._id)
+            navigate("/dashboard");
+          }
+        })
+        .catch((err) => {
+          if (err.response.data == "Wrong Password") {
+              setError("Wrong Password");
+            }
+          reject(false);
+        });
+    });
   };
   return (
     <div className="signIn-container">
@@ -41,7 +56,6 @@ function Signin() {
               <input
                 onChange={(e) => {
                   SetSchoolID(e.target.value);
-                  console.log(e.target.value);
                 }}
                 className="input-field-user"
                 type="text"
@@ -53,7 +67,6 @@ function Signin() {
               <input
                 onChange={(e) => {
                   SetSchoolPasscode(e.target.value);
-                  console.log(e.target.value);
                 }}
                 className="input-field-user"
                 type="password"
@@ -61,12 +74,13 @@ function Signin() {
               />
             </div>
             <p
-              className="d-flex justify-content-end"
+              className="d-flex justify-content-end mb-0"
               style={{ color: "#0395C4", cursor: "pointer" }}
               onClick={() => navigate("/forgot_password")}
             >
               Forgot Password ?
             </p>
+            <p className="mb-0 mt-0" style={{color:'red'}}>{error}</p>
             <button className="signin-btn" onClick={APISignin}>
               Sign in
             </button>

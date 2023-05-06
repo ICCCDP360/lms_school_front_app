@@ -10,6 +10,7 @@ import forumBlack from "../../assests/images/forumBlack.svg";
 import LogoutIcon from "../../assests/images/logoutIcon.svg";
 import RightArrow from "../../assests/images/rightArrow.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import logOutService from "../../services/logOutService";
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -22,8 +23,8 @@ function Sidebar() {
   };
   const [schoolDetails, SetSchoolDetails] = useState("");
   useEffect(() => {
-    const Data = JSON.parse(localStorage.getItem("user"));
-    SetSchoolDetails(Data);
+    // const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails();
   }, []);
   const contentPage = () => {
     navigate("/instructor");
@@ -32,8 +33,21 @@ function Sidebar() {
     navigate("/student");
   };
 
+  const courseContent = () => {
+    navigate("/course");
+  };
+
   const logout = () => {
-    navigate("/");
+    return new Promise((resolve, reject) => {
+      let data = {
+        _id: localStorage.getItem("_id"),
+      };
+      logOutService.logout(data).then((res) => {
+        navigate("/");
+        localStorage.removeItem("/school_id");
+        localStorage.removeItem("/access_tokens");
+      });
+    });
   };
 
   return (
@@ -102,6 +116,21 @@ function Sidebar() {
                   <img src={forumBlack} />
                 )}
                 <p className="sidetext-content">Students</p>
+              </div>
+              <div
+                className={
+                  location.pathname === "/course"
+                    ? "single-sidecontent-active"
+                    : "single-sidecontent"
+                }
+                onClick={courseContent}
+              >
+                {stepCount === 1 ? (
+                  <img src={forumWhite} />
+                ) : (
+                  <img src={forumBlack} />
+                )}
+                <p className="sidetext-content">Course</p>
               </div>
             </div>
             <div className="end-divider-container">

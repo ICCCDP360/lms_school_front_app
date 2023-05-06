@@ -6,8 +6,8 @@ import logo from "../../../assests/logo.svg";
 function ProfileContent() {
   const [schoolDetails, SetSchoolDetails] = useState("");
   useEffect(() => {
-    const Data = JSON.parse(localStorage.getItem("user"));
-    SetSchoolDetails(Data);
+    // const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails();
   }, []);
   return (
     <div className="profile-content-main-container-1">
@@ -25,14 +25,14 @@ function ProfileContent() {
             <p className="para-profile-content">Principal Name</p>
             <input
               className="input-data-1"
-              value={schoolDetails.user_name}
+              // value={schoolDetails.user_name}
               type="text"
             />
           </div>
           <div className="w-100">
             <p className="para-profile-content">SPOC Name</p>
             <input
-              value={schoolDetails.goadem_admin}
+              // value={schoolDetails.goadem_admin}
               className="input-data-1"
               type="text"
             />
@@ -42,7 +42,7 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">School Name</p>
             <input
-              value={schoolDetails.sch_name}
+              // value={schoolDetails.sch_name}
               className="input-data-1"
               type="text"
             />
@@ -50,7 +50,7 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">Contact Number</p>
             <input
-              value={schoolDetails?.ph_num}
+              // value={schoolDetails?.ph_num}
               className="input-data-1"
               type="number"
             />
@@ -60,7 +60,7 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">School Email</p>
             <input
-              value={schoolDetails?.email}
+              // value={schoolDetails?.email}
               className="input-data-1"
               type="text"
             />
@@ -68,7 +68,7 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">Date Of Joining</p>
             <input
-              value={schoolDetails?.dt}
+              // value={schoolDetails?.dt}
               className="input-data-1"
               type="text"
             />
@@ -79,7 +79,7 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">Address</p>
             <input
-              value={schoolDetails?.address}
+              // value={schoolDetails?.address}
               className="input-data-1"
               type="text"
             />
@@ -87,7 +87,7 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">City </p>
             <input
-              value={schoolDetails?.city}
+              // value={schoolDetails?.city}
               className="input-data-1"
               type="text"
             />
@@ -97,7 +97,7 @@ function ProfileContent() {
           <div className="w-100">
             <p className="para-profile-content">Pincode</p>
             <input
-              value={schoolDetails?.pincode}
+              // value={schoolDetails?.pincode}
               className="input-data-1"
               type="text"
             />
@@ -105,7 +105,7 @@ function ProfileContent() {
           <div className="w-100">
             <p className="para-profile-content">State</p>
             <input
-              value={schoolDetails?.state}
+              // value={schoolDetails?.state}
               className="input-data-1"
               type="text"
             />

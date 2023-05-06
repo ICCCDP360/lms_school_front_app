@@ -9,8 +9,8 @@ function ProfileHeader() {
   const navigate = useNavigate();
   const [schoolDetails, SetSchoolDetails] = useState("");
   useEffect(() => {
-    const Data = JSON.parse(localStorage.getItem("user"));
-    SetSchoolDetails(Data);
+    // const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails();
   }, []);
   return (
     <div className="profile-header-main-container">

@@ -1,0 +1,13 @@
+@use "../../../../scss/abstract/" as *;
+
+.assessmenttext-fullcontainer{
+    width: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 2%;
+    background-color: white;
+    .heading-subject{
+        font-size: 24px;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,89 @@
+@use "../../../../scss/abstract/" as *;
+
+.content-full-container{
+    width: 100%;
+    background-color: white;
+    height: 82vh;
+    overflow: auto;
+    border-radius: 10px;
+    .header-container{
+        background-color: rgba(237, 20, 2, 0.2);
+        display: flex;
+        justify-content: space-between;
+        .subject-container{
+            padding: 2%;
+            .subject-name{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .content-name{
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+        
+    }
+    .sub-content-container{
+        padding: 2%;
+        padding-bottom: 0%;
+        .top-header-container{
+            display: flex;
+            justify-content: space-between;
+            .subject-container{
+                display: flex;
+                .subject-text{
+                    padding: 1%;
+                    padding-left: 10%;
+                    padding-right: 10%;
+                    font-size: 18px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+                .subject-text-active{
+                    padding: 1%;
+                    padding-left: 10%;
+                    padding-right: 10%;
+                    font-size: 18px;
+                    font-weight: 600;
+                    background-color: #FBD0CC;
+                    border-radius: 10px;
+                    border-bottom: 3px solid #9C1303;
+                    cursor: pointer;
+                }
+            }
+            .input-container{
+                border: 1px solid #F5F5F5;
+                border-radius: 10px;
+                width: 35%;
+                display: flex;
+                .inputs{
+                    border: none;
+                    border-radius: 10px;
+                    margin-left: 5px;
+                    width: 100%;
+                }
+            }
+        }
+        .content-show{
+            height: 50vh;
+            overflow: auto;
+            .mytask-btn {
+                padding: 2%;
+                color: white;
+                font-size: 18px;
+                font-weight: 600;
+                padding-left: 5%;
+                padding-right: 5%;
+                border: none;
+                background-image: linear-gradient(97.74deg, #9C1303 -4.15%, #E81402 100%);;
+                border-radius: 10px;
+                margin-top: 5%;
+                @include xsBreakPoint {
+                  padding: 1.5%;
+                }
+              }
+        }
+       
+    }
+    
+}

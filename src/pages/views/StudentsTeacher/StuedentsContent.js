@@ -249,7 +249,7 @@ const StuedentsContent = () => {
               </th> */}
               <th className="student-table-th">Student Name</th>
               <th className="student-table-th">Contact Number</th>
-              {/* <th className="student-table-th">GoAdem Id</th> */}
+              <th className="student-table-th">GoAdem Id</th>
               <th className="student-table-th">Roll Number</th>
               <th className="student-table-th">Class</th>
               <th className="student-table-th">Section</th>
@@ -284,7 +284,7 @@ const StuedentsContent = () => {
                     <td className="student-table-map-td">
                       {value.contactNumber}
                     </td>
-                    {/* <td className="student-table-map-td">{value.goAdemId}</td> */}
+                    <td className="student-table-map-td">{value.goAdemId}</td>
                     <td className="student-table-map-td">{value.rollNumber}</td>
                     <td className="student-table-map-td">{value.class}</td>
                     <td className="student-table-map-td">{value.section}</td>

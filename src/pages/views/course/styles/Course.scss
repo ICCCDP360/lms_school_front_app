@@ -1,0 +1,45 @@
+@use "../../../../scss/abstract/" as *;
+
+.course-header {
+  padding: 1%;
+  padding-bottom: 2.5%;
+  width: 100%;
+  @include smBreakPoint {
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+  }
+  @include xsBreakPoint {
+    background-color: rgb(245, 245, 245);
+    // width: 555px;
+    // overflow: scroll;
+    // height: 100vh;
+  }
+  @include mdBreakPoint{
+    padding-bottom: 7%;
+  }
+}
+
+.header-response {
+    display: flex;
+    justify-content: space-between;
+    @include smBreakPoint {
+      width: 100%;
+    }
+  }
+
+  .profile_header {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    @include xsBreakPoint {
+      font-size: 10px;
+    }
+    .notify {
+      margin-right: 30px;
+      @include xsBreakPoint {
+        margin-left: 5%;
+      }
+    }
+  }

@@ -2,7 +2,7 @@ import React from "react";
 import StudentsHeader from "./StudentsHeader";
 import StuedentsContent from "./StuedentsContent";
 
-const StudentsMainPage = () => {
+const StudentsTeacher = () => {
   return (
     <div className="student-mainpage-container">
       <StudentsHeader />
@@ -11,4 +11,4 @@ const StudentsMainPage = () => {
   );
 };
 
-export default StudentsMainPage;
+export default StudentsTeacher;
