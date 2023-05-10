@@ -1,10 +1,16 @@
-import instanceBaseurl1 from "./auth/HttpInterceptor1";
+import instanceBaseurl2 from "./auth/HttpInterceptor2";
 
 class classSelectionService {
   classSelect = (trigger) => {
+    var config = {
+      headers: {
+        "x-access-token": localStorage.getItem("access_tokens"),
+        "Content-Type": "application/json",
+      },
+    };
     return new Promise((resolve, reject) => {
-      instanceBaseurl1
-        .post(`course/filter/course`, trigger)
+      instanceBaseurl2
+        .post(`course/filter`, trigger,config)
 
         .then((res) => {
           resolve(res.data);

@@ -26,7 +26,7 @@
     padding-left: 10%;
     padding-right: 10%;
     .divider-line {
-      border: 1px solid #0197c6;
+      border: 1px solid #FBD0CC;
       //   @include lgBreakPoint {
       //     margin-top: 0%;
       //     margin-bottom: 8%;
@@ -49,11 +49,10 @@
     }
     .single-sidecontent-active {
       display: flex;
-      padding: 6%;
+      padding: 7%;
       cursor: pointer;
-      background-color: #0395c4;
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px;
+      background-color: #FBD0CC;
+      border-left: 3px solid #9C1303;
       .sidetext-content {
         margin-top: auto;
         margin-bottom: auto;
@@ -67,7 +66,7 @@
     padding-left: 10%;
     padding-right: 10%;
     .end-divider-line {
-      border: 1px solid #0197c6;
+      border: 1px solid #FBD0CC;
       margin-top: 5%;
       //   @include lgBreakPoint {
       //     margin-top: 8%;
@@ -79,7 +78,7 @@
     .logout-btn {
       width: 100%;
       background-color: white;
-      border: 1px solid #0197c6;
+      border: 1px solid #9C1303;
       border-radius: 50px;
       .logout-btn-container {
         display: flex;
@@ -102,7 +101,7 @@
         .logout-text {
           font-size: 18px;
           font-weight: 600;
-          color: #0197c6;
+          color: #9C1303;
           margin: auto;
           margin-left: 10px;
           //   @include lgBreakPoint {
@@ -113,7 +112,7 @@
         .logout-text-tamil {
           font-size: 15px;
           font-weight: 600;
-          color: #0197c6;
+          color: #FBD0CC;
           margin: auto;
           margin-left: 10%;
         }
@@ -175,7 +174,7 @@
     padding-left: 10%;
     padding-right: 10%;
     .divider-line {
-      border: 1px solid #0197c6;
+      border: 1px solid #FBD0CC;
       // @include lgBreakPoint {
       //   margin-top: 0%;
       //   margin-bottom: 8%;
@@ -202,7 +201,7 @@
     padding-left: 10%;
     padding-right: 10%;
     .end-divider-line {
-      border: 1px solid #0197c6;
+      border: 1px solid #FBD0CC;
       margin-top: 5%;
       // @include lgBreakPoint {
       //   margin-top: 8%;
@@ -215,7 +214,7 @@
     .logout-btn {
       width: 100%;
       background-color: white;
-      border: 1px solid #0197c6;
+      border: 1px solid #FBD0CC;
       border-radius: 50px;
       .logout-btn-container {
         .logout-img {

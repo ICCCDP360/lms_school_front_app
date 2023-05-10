@@ -8,21 +8,35 @@ import PDF from "../../../../assests/images/pdfsample.svg";
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
+import subChapterService from "../../../../services/subChapter";
 
 function CourseContent() {
   const [step, setStep] = useState(0);
   const navigate = useNavigate();
   const { state } = useLocation();
-  console.log(state);
+  const [subChapter, setSubChapter] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getChapter();
+  }, []);
+
+  const getChapter = () => {
+    subChapterService
+      .subChapter(state.chapterId)
+      .then((res) => {
+        setSubChapter(res);
+      })
+      .catch((err) => {
+        console.log(err, "Error");
+      });
+  }
 
   return (
     <div className="content-full-container">
       <div className="header-container">
         <div className="subject-container">
           <p className="subject-name mb-2">{state.subject}</p>
-          <p className="content-name mb-2">{state.name}</p>
+          <p className="content-name mb-2">{state.chapterName}</p>
         </div>
         <div>
           <img src={Telescope} className="me-4" />
@@ -74,18 +88,25 @@ function CourseContent() {
             <div>
               <Row>
                 {/* {videoData.map((data, index) => ( */}
-                <Col lg="3" md="6">
-                  <div
-                    className="video-full-container"
-                    onClick={() => navigate("/contentshow", { state: "video" })}
-                  >
-                    <div>
-                      <img src={Intro} className="video-main-img" />
+                {subChapter.map((data) => (
+                  <Col lg="3" md="6">
+                    <div
+                      className="video-full-container"
+                      onClick={() =>
+                        navigate("/contentshow", { state: {name:"video",id:data.subchapterId} })
+                      }
+                    >
+                      <div>
+                        <img src={Intro} className="video-main-img" />
+                      </div>
+                      <p className="video-header-content mt-2">
+                        {data.subChapterName}
+                      </p>
                     </div>
-                    <p className="video-header-content mt-2">Introduction</p>
-                  </div>
-                </Col>
-                <Col lg="3" md="6">
+                  </Col>
+                ))}
+
+                {/* <Col lg="3" md="6">
                   <div className="video-full-container">
                     <div>
                       <img src={Mouth} className="video-main-img" />
@@ -94,7 +115,7 @@ function CourseContent() {
                       Mouth & Buccal cavity
                     </p>
                   </div>
-                </Col>
+                </Col> */}
                 {/* ))} */}
               </Row>
             </div>
@@ -104,30 +125,22 @@ function CourseContent() {
             <div>
               <Row>
                 {/* {videoData.map((data, index) => ( */}
-                <Col lg="3" md="6">
-                  <div
-                    className="video-full-container"
-                    onClick={() => navigate("/contentshow", { state: "pdf" })}
-                  >
-                    <div>
-                      <img src={PDF} className="video-main-img" />
+                {subChapter.map((data) => (
+                  <Col lg="3" md="6">
+                    <div
+                      className="video-full-container"
+                      onClick={() => navigate("/contentshow", { state: {name:"pdf",id:data.subchapterId} })}
+                    >
+                      <div>
+                        <img src={PDF} className="video-main-img" />
+                      </div>
+                      <p className="video-header-content mt-2">
+                        {data.subChapterName}
+                      </p>
+                      <button className="mytask-btn mt-3">Read</button>
                     </div>
-                    <p className="video-header-content mt-2">Introduction</p>
-                    <button className="mytask-btn mt-3">Read</button>
-                  </div>
-                </Col>
-                <Col lg="3" md="6">
-                  <div className="video-full-container">
-                    <div>
-                      <img src={PDF} className="video-main-img" />
-                    </div>
-                    <p className="video-header-content mt-2">
-                      Mouth & Buccal cavity
-                    </p>
-                    <button className="mytask-btn mt-3">Read</button>
-                  </div>
-                </Col>
-                {/* ))} */}
+                  </Col>
+                ))}
               </Row>
             </div>
           ) : null}
@@ -136,32 +149,24 @@ function CourseContent() {
             <div>
               <Row>
                 {/* {videoData.map((data, index) => ( */}
-                <Col lg="3" md="6">
-                  <div
-                    className="video-full-container"
-                    onClick={() =>
-                      navigate("/contentshow", { state: "practise" })
-                    }
-                  >
-                    <div>
-                      <img src={Intro} className="video-main-img" />
+                {subChapter.map((data) => (
+                  <Col lg="3" md="6">
+                    <div
+                      className="video-full-container"
+                      onClick={() =>
+                        navigate("/contentshow", { state: {name:"practise",id:data.subchapterId} })
+                      }
+                    >
+                      <div>
+                        <img src={Intro} className="video-main-img" />
+                      </div>
+                      <p className="video-header-content mt-2">
+                        {data.subChapterName}
+                      </p>
+                      <button className="mytask-btn mt-3">Practise</button>
                     </div>
-                    <p className="video-header-content mt-2">Introduction</p>
-                    <button className="mytask-btn mt-3">Practise</button>
-                  </div>
-                </Col>
-                <Col lg="3" md="6">
-                  <div className="video-full-container">
-                    <div>
-                      <img src={Mouth} className="video-main-img" />
-                    </div>
-                    <p className="video-header-content mt-2">
-                      Mouth & Buccal cavity
-                    </p>
-                    <button className="mytask-btn mt-3">Practise</button>
-                  </div>
-                </Col>
-                {/* ))} */}
+                  </Col>
+                ))}
               </Row>
             </div>
           ) : null}
@@ -170,21 +175,25 @@ function CourseContent() {
             <div>
               <Row>
                 {/* {videoData.map((data, index) => ( */}
-                <Col lg="3" md="6">
-                  <div
-                    className="video-full-container"
-                    onClick={() =>
-                      navigate("/contentshow", { state: "assessment" })
-                    }
-                  >
-                    <div>
-                      <img src={Intro} className="video-main-img" />
+                {subChapter.map((data) => (
+                  <Col lg="3" md="6">
+                    <div
+                      className="video-full-container"
+                      onClick={() =>
+                        navigate("/contentshow", { state: {name:"assessment",id:data.subchapterId} })
+                      }
+                    >
+                      <div>
+                        <img src={Intro} className="video-main-img" />
+                      </div>
+                      <p className="video-header-content mt-2">
+                        {data.subChapterName}
+                      </p>
+                      <button className="mytask-btn mt-3">Take Test</button>
                     </div>
-                    <p className="video-header-content mt-2">Introduction</p>
-                    <button className="mytask-btn mt-3">Take Test</button>
-                  </div>
-                </Col>
-                <Col lg="3" md="6">
+                  </Col>
+                ))}
+                {/* <Col lg="3" md="6">
                   <div className="video-full-container">
                     <div>
                       <img src={Mouth} className="video-main-img" />
@@ -194,7 +203,7 @@ function CourseContent() {
                     </p>
                     <button className="mytask-btn mt-3">Take Test</button>
                   </div>
-                </Col>
+                </Col> */}
                 {/* ))} */}
               </Row>
             </div>

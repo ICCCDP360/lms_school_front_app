@@ -3,9 +3,10 @@ import { useState } from "react";
 import { DefaultEditor } from "react-simple-wysiwyg";
 import "../styles/VideoPlayer.scss";
 
-function VideoPlayer() {
+function VideoPlayer({ videoData }) {
   const [videoDivision, setVideoDicvision] = useState(0);
   const [html, setHtml] = useState("");
+  console.log(videoData,'videoData');
 
   function onChange(e) {
     setHtml(e.target.value);
@@ -23,8 +24,11 @@ function VideoPlayer() {
         /> */}
       <div className="container">
         <div style={{ position: "relative", paddingTop: "56.25%" }}>
-          <iframe
-            src="https://iframe.mediadelivery.net/embed/119704/3a6adaab-98ff-4bff-acc4-5b067be76386?autoplay=true"
+          {
+            videoData==''?(<>Loading</>):(
+              <iframe
+            // src="https://iframe.mediadelivery.net/embed/119704/3a6adaab-98ff-4bff-acc4-5b067be76386?autoplay=true"
+            src={videoData}
             loading="lazy"
             style={{
               border: "none",
@@ -37,6 +41,9 @@ function VideoPlayer() {
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowfullscreen="true"
           ></iframe>
+            )
+          }
+          
         </div>
       </div>
       {/* </div> */}

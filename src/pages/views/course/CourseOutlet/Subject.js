@@ -27,19 +27,16 @@ function Subject() {
       let data = {
         standard: state[step].standard,
         subject: state[step].subject,
-        courseId: state[step].course,
+        courseId: state[step].courseId,
       };
       subjectService
         .subjectServiceSelect(data)
         .then((res) => {
+          console.log(res,'res');
           setSubjectData(res);
-          console.log(res, "manoj");
         })
         .catch((err) => {
           setSubjectData(err.response.data);
-          // if (err.response.data == "School Not Found") {
-          //     setError("Account not found");
-          //   }
           reject(false);
         });
     });
@@ -81,11 +78,11 @@ function Subject() {
             <div className="myTask-full-container mt-4">
               <div className="mytask-sub-container">
                 <div>
-                  <h1 className="subject-content">{data.name}</h1>
+                  <h1 className="subject-content">{data.chapterName}</h1>
                   <div className="subject-btm-container mt-3">
                     <img src={Chapter} />
                     <p className="subject-btm-text mb-0">
-                      {data.pdfsCount} Chapter
+                      {data.subchaptersCount} Chapter
                     </p>
                   </div>
                   <button

@@ -1,9 +1,9 @@
 import React from "react";
 
-function PdfPage() {
+function PdfPage({pdfData}) {
   return (
     <div style={{ textAlign: "center", paddingBottom: "15%" }}>
-      {/* <iframe src={dataPageValue} style={{ width: "90%", height: "100vh" }} /> */}
+      <iframe src={pdfData} style={{ width: "90%", height: "100vh" }} />
     </div>
   );
 }

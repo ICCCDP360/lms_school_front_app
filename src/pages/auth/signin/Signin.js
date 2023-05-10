@@ -28,6 +28,7 @@ function Signin() {
           } else {
             localStorage.setItem("access_tokens", res.access_tokens);
             localStorage.setItem("_id",res.response._id)
+            localStorage.setItem("roleId",res.response.roleId[0])
             navigate("/dashboard");
           }
         })

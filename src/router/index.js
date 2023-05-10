@@ -19,8 +19,9 @@ import ContentPlayPage from "../pages/views/course/ContentShowPage/ContentPlayPa
 import PractiseText from "../pages/views/course/ExamPage/PractiseText";
 import AssessmentText from "../pages/views/course/ExamPage/AssessmentText";
 import MainPage from "../pages/auth/signin/MainPage";
-import DashboardTeacher from "../pages/views/dashboardTeacher/DashboardTeacher";
 import StudentsTeacher from "../pages/views/StudentsTeacher/StudentsTeacher";
+import AssessmentResultPage from './../pages/views/course/ResultPage/AssessmentResultPage';
+import PractiseResultPage from "../pages/views/course/ResultPage/PractiseResultPage";
 function IndexRouters() {
   return (
     <div className="main-route">
@@ -35,7 +36,7 @@ function IndexRouters() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/instructor" element={<InstructorMainPage />} />
           <Route path="/student" element={<StudentsMainPage />} />
-          {/* <Route path="/student" element={<StudentsTeacher />} /> */}
+          <Route path="/teacher/student" element={<StudentsTeacher />} />
           <Route path="/profile" element={<ProfileMain />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/course" element={<CourseRoute />}>
@@ -44,7 +45,9 @@ function IndexRouters() {
           </Route>
           <Route path='/contentshow' element={<ContentPlayPage/>}/>
           <Route path='/practise_text' element={<PractiseText/>}/>
+          <Route path='/practise_result' element={<PractiseResultPage/>}/>
           <Route path='/assessment_text' element={<AssessmentText/>}/>
+          <Route path='/assessment_result' element={<AssessmentResultPage/>}/>
         </Route>
       </Routes>
     </div>

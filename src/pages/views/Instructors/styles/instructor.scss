@@ -4,32 +4,32 @@
 .instructor-mainpage-container {
   padding: 1%;
   width: 100%;
-  @include smBreakPoint {
-    // padding: 1%;
-    height: 1117px;
-  }
-  @include xsBreakPoint {
-    height: 1117px;
+  // @include smBreakPoint {
+  //   // padding: 1%;
+  //   height: 1117px;
+  // }
+  // @include xsBreakPoint {
+  //   height: 1117px;
 
-    // padding: 1%;
-  }
-  @include mdBreakPoint {
-    height: 1117px;
+  //   // padding: 1%;
+  // }
+  // @include mdBreakPoint {
+  //   height: 1117px;
 
-    // padding: 1%;
-  }
-  @include lgBreakPoint {
-    height: 1117px;
+  //   // padding: 1%;
+  // }
+  // @include lgBreakPoint {
+  //   height: 1117px;
 
-    // padding: 1%;
-  }
-  @include xxlBreakPoint {
-    height: 1117px;
-    // padding: 1%;
-  }
-  @include xxxlBreakPoint {
-    height: 1117px;
-  }
+  //   // padding: 1%;
+  // }
+  // @include xxlBreakPoint {
+  //   height: 1117px;
+  //   // padding: 1%;
+  // }
+  // @include xxxlBreakPoint {
+  //   height: 1117px;
+  // }
 }
 //header-instructor
 .main-container-instructor {
@@ -110,6 +110,8 @@
 .instructor-content-main-container {
   background: white;
   border-radius: 10px;
+  height: 70vh;
+  overflow: auto;
   .instructor-content-main-container-1 {
     display: flex;
     justify-content: space-between;
@@ -321,6 +323,9 @@
       font-weight: 400;
     }
   }
+}
+.paginationBttns{
+  height: 10px !important;
 }
 .modal-instructor-container-1 {
   .modal-instructor-container-2 {

@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/PractisePage.scss";
 import { useNavigate } from "react-router-dom";
 
-function PractisePage() {
+function PractisePage({practiseData,heading,subChapterId}) {
   const navigate = useNavigate();
   return (
     <div className="practise-full-container">
@@ -32,7 +32,7 @@ function PractisePage() {
 
       <button
         className="startpractise-btn"
-        onClick={() => navigate("/practise_text")}
+        onClick={() => navigate("/practise_text",{state:{data:practiseData,heading:heading,subChapterId:subChapterId}})}
       >
         Start Practice
       </button>

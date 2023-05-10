@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Notification from "../../../assests/images/notify.svg";
+import Language from '../../../assests/images/language.svg'
 import School from "../../../assests/images/school.svg";
 import { useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
@@ -7,6 +8,8 @@ import "./styles/Dashboard.scss";
 
 function DashboardHeader() {
   const [schoolDetails, SetSchoolDetails] = useState("");
+  const language = localStorage.getItem("lang") || "english";
+
   useEffect(() => {
     // const Data = JSON.parse(localStorage.getItem("user"));
     SetSchoolDetails();
@@ -16,6 +19,16 @@ function DashboardHeader() {
   function Schoolprofile() {
     navigate("/profile");
   }
+
+  const englishLang = () => {
+    localStorage.setItem("lang", "en");
+    window.location.reload();
+  };
+
+  const tamilLang = () => {
+    localStorage.setItem("lang", "ta");
+    window.location.reload();
+  };
   return (
     // <div>
     //   <div className="header-response">
@@ -209,6 +222,27 @@ function DashboardHeader() {
           </p>
         </div>
         <div className="instructor-header-main-container-1">
+          <div>
+          <Dropdown>
+                <Dropdown.Toggle
+                  style={{
+                    backgroundColor: "transparent",
+                    border: "transparent",
+                  }}
+                >
+                  <img src={Language} />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={englishLang}>
+                    {language == "english" ? "English" : "ஆங்கிலம்"}
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={tamilLang}>
+                    {language == "english" ? "Tamil" : "தமிழ்"}
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+          </div>
           <div className="dropdown-container-main">
             <Dropdown>
               <Dropdown.Toggle

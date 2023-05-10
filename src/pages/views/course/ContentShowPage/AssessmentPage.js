@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/AssessmentPage.scss";
 import { useNavigate } from "react-router-dom";
 
-function AssessmentPage() {
+function AssessmentPage({assessmentData,heading}) {
   const navigate = useNavigate();
   return (
     <div className="practise-full-container">
@@ -32,7 +32,7 @@ function AssessmentPage() {
 
       <button
         className="startpractise-btn"
-        onClick={() => navigate("/assessment_text")}
+        onClick={() => navigate("/assessment_text",{state:{data:assessmentData,heading:heading}})}
       >
         Start Test
       </button>
