@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 
 function PractiseText() {
   const { state } = useLocation();
+  console.log(state,'manoj');
   const navigate=useNavigate()
   const [qusetionData,setQuestionData]=useState(state.data)
   const [index, setIndex] = useState(0);
@@ -42,7 +43,7 @@ function PractiseText() {
   };
 
   const submitBtn=()=>{
-    navigate('/practise_result',{state:state.subChapterId})
+    navigate('/practise_result',{state:{id:state.subChapterId,heading:state.heading}})
   }
   return (
     <div className="practisetext-fullcontainer">

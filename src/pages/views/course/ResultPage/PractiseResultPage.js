@@ -29,25 +29,28 @@ function PractiseResultPage() {
 
   return (
     <div className="practise-result-full-container">
-      <div className="showscore-container">
-        <div className="showscore-inside-container">
-          <div className="show-header-img-container">
-            <img src={videoComplete} />
-            <p>{language == "en" ? "Video" : "வீடியோ"}</p>
+      <div>
+        <p className="sub-heading">{state.heading}</p>
+        {/* <div className="heading-img-maincontainer mt-3"> */}
+          <div className="heading-img-container mt-3">
+            <div >
+              <img src={videoComplete} />
+              <p>Video</p>
+            </div>
+            <div>
+              <img src={PdfComplete} />
+              <p>Pdf</p>
+            </div>
+            <div>
+              <img src={PractiseProcess} />
+              <p>Practise</p>
+            </div>
+            <div>
+              <img src={Assessment} />
+              <p>Assessment</p>
+            </div>
           </div>
-          <div className="show-header-img-container">
-            <img src={PdfComplete} />
-            <p>PDF</p>
-          </div>
-          <div className="show-header-img-container">
-            <img src={PractiseProcess} />
-            <p>{language == "en" ? "Practice" : "பயிற்சி"}</p>
-          </div>
-          <div className="show-header-img-container">
-            <img src={Assessment} />
-            <p>{language == "en" ? "Assessment" : "மதிப்பீடு"}</p>
-          </div>
-        </div>
+        {/* </div> */}
       </div>
       <div className="middle-result-container mt-3">
         <p className="success-text">

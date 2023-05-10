@@ -24,7 +24,7 @@ import assessmentContentService from '../../../../services/assessmentByCourse'
 
 function ContentPlayPage() {
   const { state } = useLocation();
-  console.log(state.name,'state');
+  console.log(state,'state');
   const [pageDeside, setPageDeside] = useState(state.name);
   const [getId, setGetId] = useState(state.id);
   const [videoImg, setVideoImg] = useState(Video);
@@ -69,6 +69,8 @@ function ContentPlayPage() {
         .pdfContent(data)
         .then((res) => {
           setPdfData(res[0].pdf[0].pdfUrl)
+          setHeading(res[0].subChapterName)
+          setSubChapterId(res[0].subchapterId)
         })
         .catch((err) => {
           console.log(err);
@@ -87,6 +89,8 @@ function ContentPlayPage() {
         .practiseContent(data)
         .then((res) => {
           setPractiseData(res[0].practices)
+          setHeading(res[0].subChapterName)
+          setSubChapterId(res[0].subchapterId)
         })
         .catch((err) => {
           console.log(err);
@@ -105,6 +109,8 @@ function ContentPlayPage() {
         .assessmentContent(data)
         .then((res) => {
           setAssessmentData(res[0].assessments)
+          setHeading(res[0].subChapterName)
+          setSubChapterId(res[0].subchapterId)
         })
         .catch((err) => {
           console.log(err);
@@ -172,8 +178,8 @@ function ContentPlayPage() {
     <div className="content-page-full">
       <div>
         <p className="sub-heading">{heading}</p>
-        <div className="heading-img-maincontainer mt-3">
-          <div className="heading-img-container">
+        {/* <div className="heading-img-maincontainer mt-3"> */}
+          <div className="heading-img-container mt-3">
             <div onClick={videoClick}>
               <img src={videoImg} />
               <p>Video</p>
@@ -191,7 +197,7 @@ function ContentPlayPage() {
               <p>Assessment</p>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
       {pageDeside == "video" ? <VideoPlayer videoData={videoData} /> : null}
       {pageDeside == "pdf" ? <PdfPage pdfData={pdfData}/> : null}
